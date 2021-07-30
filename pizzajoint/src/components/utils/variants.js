@@ -6,14 +6,17 @@ export const containerVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: {type: 'spring', delay: .5}
+    transition: {
+      type: 'spring', 
+      delay: .5,
+    }
   },
-  hover: {
-    scale: 1.1,
-    textShadow: "0px 0px 8px rgb(255,255,255)",
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
-    transition: {duration:.3},
-  }
+  // hover: {
+  //   scale: 1.1,
+  //   textShadow: "0px 0px 8px rgb(255,255,255)",
+  //   boxShadow: "0px 0px 8px rgb(255,255,255)",
+  //   transition: {duration:.3},
+  // }
 }
 
 export const buttonVariants = {
