@@ -1,13 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
+import Container from './StyledComponents/Container';
+import { H2 } from './StyledComponents/Headings';
+import ListItem from './StyledComponents/ListItem';
+
+
+const StyledP = styled.p`
+  margin: 1.5rem auto;
+`;
+
+const StyledUl = styled.ul`
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const Order = ({ pizza }) => {
+
   return (
-    <div className="container order">
-      <h2>Thank you for your order :)</h2>
-      <p>You ordered a {pizza.base} pizza with:</p>
-      {pizza.toppings.map(topping => <div key={topping}>{topping}</div>)}
-    </div>
-  )
+    <Container>
+      <H2>Thank you for your order!</H2>
+      <StyledP>You ordered a {pizza.base} pizza with:</StyledP>
+      {pizza.toppings.length=== 0 ? <p>No Toppings</p> : <StyledUl>
+        {pizza.toppings.map(topping => (<ListItem key={topping} >{topping}</ListItem>))}
+      </StyledUl>}
+    </Container>
+  );
 }
 
 export default Order;

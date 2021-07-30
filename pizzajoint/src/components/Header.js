@@ -1,8 +1,19 @@
 import React from 'react';
+import {motion} from 'framer-motion';
+import styled from 'styled-components';
+
+import {H1} from './StyledComponents/Headings';
+
+const StyledHeader = styled(motion.header)`
+  display: flex;
+  padding: 2.5rem;
+  align-items: center;
+`;
+
 
 const Header = () => {
   return (
-    <header>
+    <StyledHeader>
       <div className="logo">
         <svg className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <path
@@ -15,10 +26,16 @@ const Header = () => {
           />
         </svg>
       </div>
-      <div className="title">
-        <h1>Pizza Joint</h1>
-      </div>
-    </header>
+      {/* <div className="title"> */}
+        <H1 
+        initial={{y:-200}}
+        animate={{ y: 0 }} 
+        transition={{ delay: .2, type:'spring', stiffness: 100}}
+        >
+          Pizza Joint
+        </H1>
+      {/* </div> */}
+    </StyledHeader>
   )
 }
 
