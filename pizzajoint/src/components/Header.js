@@ -26,7 +26,6 @@ const Header = () => {
           />
         </svg>
       </div>
-      {/* <div className="title"> */}
         <H1 
         initial={{y:-200}}
         animate={{ y: 0 }} 
@@ -34,7 +33,7 @@ const Header = () => {
         >
           Pizza Joint
         </H1>
-      {/* </div> */}
+      
     </StyledHeader>
   )
 }
