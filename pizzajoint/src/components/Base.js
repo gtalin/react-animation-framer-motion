@@ -18,7 +18,30 @@ const containerVariants = {
   },
   visible: {
     opacity: 1,
-    x: 0
+    x: 0,
+    transition: {type: 'spring', delay: .5}
+  },
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {duration:.3},
+  }
+}
+
+const ButtonVariants = {
+  hidden: {
+    x:'-100vw'
+  },
+  visible: {
+    x: 0,
+    transition: {type:'spring', stiffness:120}
+  },
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {duration:.3},
   }
 }
 
@@ -27,9 +50,9 @@ const Base = ({ addBase, pizza }) => {
 
   return (
     <Container narrow
-    initial={{x: '100vw'}}
-    animate={{x:0}}
-    transition={{type: 'spring', delay: .5}}
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
     >
       <H3>Step 1: Choose Your Base</H3>
       <ul>
@@ -58,16 +81,8 @@ const Base = ({ addBase, pizza }) => {
         /* <div className="next"> */
           <Link to="/toppings">
             {/* <button>Next</button> */}
-            <Button
-            initial={{x:'-100vw'}}
-            animate={{x:0}}
-            transition={{type:'spring', stiffness:120}}
-            whileHover={{
-           scale: 1.1,
-           textShadow: "0px 0px 8px rgb(255,255,255)",
-           boxShadow: "0px 0px 8px rgb(255,255,255)",
-           transition: {duration:.3},
-         }}
+            <Button variants={ButtonVariants}
+            whileHover="hover"
             >Next</Button>
           </Link>
         /* </div> */
