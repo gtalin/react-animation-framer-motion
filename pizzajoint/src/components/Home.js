@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 import Button from './StyledComponents/Button';
 import Container from './StyledComponents/Container';
 import {H2} from './StyledComponents/Headings';
+// import { buttonVariants } from './utils/variants';
 
+const buttonVariants = {
+  hover: {
+    scale: [1,1.1,1,1.1,1,1.1,1],
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    // transition: {duration:.3},
+  }
+}
 const Home = () => {
   
   return (
@@ -22,12 +31,8 @@ const Home = () => {
       </H2>
       <Link to="/base">
         <Button big={true}
-         whileHover={{
-           scale: 1.1,
-           textShadow: "0px 0px 8px rgb(255,255,255)",
-           boxShadow: "0px 0px 8px rgb(255,255,255)",
-           transition: {duration:.3},
-         }}
+        variants={buttonVariants}
+         whileHover="hover"
          whileTap={{scale: .9}}
         >
         

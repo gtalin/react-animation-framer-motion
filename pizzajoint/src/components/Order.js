@@ -36,7 +36,10 @@ const StyledUl = styled(motion.ul)`
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
-  cursor: default;
+  li {
+    cursor: default;
+  }
+  
 `;
 
 const Order = ({ pizza }) => {

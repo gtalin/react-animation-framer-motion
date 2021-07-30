@@ -9,7 +9,6 @@ const ListItem = styled(motion.li)`
   
   &>span {
     ${props => {
-      console.log("The props are::", props);
       return props.active && `font-weight: bold;
       `}
       }
