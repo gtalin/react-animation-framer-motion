@@ -10,7 +10,8 @@ const StyledHeader = styled(motion.header)`
   align-items: center;
 `;
 
-const Logo = styled.div`
+const Logo = styled(motion.div)`
+  cursor: pointer;
   svg {
     width: 80px;
     overflow: visible;
@@ -41,7 +42,7 @@ const pathVariants = {
 const Header = () => {
   return (
     <StyledHeader>
-      <Logo>
+      <Logo drag dragConstraints={{left: 0, right:0, top:0, bottom:0}} dragElastic={.5}>
         <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
         variants={svgVariants}
         initial="hidden"
