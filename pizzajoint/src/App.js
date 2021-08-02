@@ -6,9 +6,12 @@ import Home from './components/Home';
 import Base from './components/Base';
 import Toppings from './components/Toppings';
 import Order from './components/Order';
+import Modal from './Modal';
 
 function App() {
   const location = useLocation();
+  const [showModal, setShowModal] = useState(false);
+  
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
 
   const addBase = (base) => {
@@ -28,6 +31,7 @@ function App() {
   return (
     <>
       <Header />
+      <Modal showModal={showModal} setShowModal={setShowModal}/>
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
         <Route path="/base">
@@ -37,14 +41,14 @@ function App() {
           <Toppings addTopping={addTopping} pizza={pizza} />
         </Route>
         <Route path="/order">
-          <Order pizza={pizza} />
+          <Order pizza={pizza} setShowModal={setShowModal} />
         </Route>
         <Route path="/">
           <Home />
         </Route>
       </Switch>
       </AnimatePresence>
-      </>
+    </>
   );
 }
 

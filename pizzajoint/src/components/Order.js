@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Container from './StyledComponents/Container';
 import { H2 } from './StyledComponents/Headings';
@@ -42,7 +42,17 @@ const StyledUl = styled(motion.ul)`
   
 `;
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
+
+  useEffect(()=> {
+    setTimeout(() => {
+      setShowModal(true);
+    },3000)
+  }, [setShowModal])
+
+  // setTimeout(() => {
+  //       setShowModal(true);
+  //     },3000)
 
   return (
     <Container
