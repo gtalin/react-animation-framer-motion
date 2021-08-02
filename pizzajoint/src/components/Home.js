@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Button from './StyledComponents/Button';
 import Container from './StyledComponents/Container';
 import {H2} from './StyledComponents/Headings';
+import Loader from './Loader';
+
 // import { buttonVariants } from './utils/variants';
 
 const containerVariants = {
@@ -54,6 +56,8 @@ const Home = () => {
         </Button>
       </Link>
     {/* </div> */}
+    <Loader/>
+
     </Container>
   )
 }

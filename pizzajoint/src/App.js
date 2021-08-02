@@ -7,7 +7,6 @@ import Base from './components/Base';
 import Toppings from './components/Toppings';
 import Order from './components/Order';
 import Modal from './Modal';
-import Logo from './components/Logo';
 
 function App() {
   const location = useLocation();
@@ -32,7 +31,6 @@ function App() {
   return (
     <>
       <Header />
-      <Logo/>
       <Modal showModal={showModal} setShowModal={setShowModal}/>
       <AnimatePresence exitBeforeEnter onExitComplete={()=>setShowModal(false)}>
         <Switch location={location} key={location.key}>

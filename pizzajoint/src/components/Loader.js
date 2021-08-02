@@ -47,7 +47,7 @@ const CenteredButton = styled(Button)`
   margin-right: auto;
 `;
 
-const Logo = () => {
+const Loader = () => {
   const [animation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   return (
     <>
@@ -59,4 +59,4 @@ const Logo = () => {
   
 }
 
-export default Logo;
+export default Loader;
