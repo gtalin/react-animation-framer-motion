@@ -6,6 +6,23 @@ import Container from './StyledComponents/Container';
 import {H2} from './StyledComponents/Headings';
 // import { buttonVariants } from './utils/variants';
 
+const containerVariants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay:.5,
+      duration: 1.5
+    }
+  },
+  exit: {
+    x:'-100vw',
+    transition: {ease: 'easeInOut'}
+  }
+}
+
 const buttonVariants = {
   hover: {
     scale: [1,1.1,1,1.1,1,1.1,1],
@@ -18,13 +35,10 @@ const Home = () => {
   
   return (
     // <div className="home container">
-    <Container
-     initial={{opacity: 0}}
-     animate={{opacity:1}}
-     transition={{
-       delay:.5,
-       duration: 1.5
-     }}
+    <Container variants={containerVariants}
+     initial="hidden"
+     animate="visible"
+     exit="exit"
     >
       <H2>
         Welcome to Pizza Joint

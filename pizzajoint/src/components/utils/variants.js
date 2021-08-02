@@ -11,6 +11,10 @@ export const containerVariants = {
       delay: .5,
     }
   },
+  exit: {
+    x:'-100vw',
+    transition: {ease: 'easeInOut'}
+  }
   // hover: {
   //   scale: 1.1,
   //   textShadow: "0px 0px 8px rgb(255,255,255)",

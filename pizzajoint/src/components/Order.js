@@ -49,6 +49,7 @@ const Order = ({ pizza }) => {
     variants={newContainerVariants}
     initial="hidden"
     animate="visible"
+    exit="exit"
     >
       <H2>Thank you for your order!</H2>
       <StyledP 
