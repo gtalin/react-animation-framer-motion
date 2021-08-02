@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import styled from 'styled-components';
+import Button from './StyledComponents/Button';
 
 const Dot = styled(motion.div)`
   width: .75rem;
@@ -27,12 +28,33 @@ const loaderVariants = {
       }
     } 
   },
-  
+  animationTwo: {
+    y: [0, -40],
+    x:0,
+    transition: {
+      y: {
+        yoyo: Infinity,
+        duration:.25,
+        ease: 'easeOut'
+      }
+    }
+  }
 }
 
+const CenteredButton = styled(Button)`
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const Logo = () => {
+  const [animation, cycleAnimation] = useCycle("animationOne", "animationTwo");
   return (
-    <Dot variants={loaderVariants} animate="animationOne"/>
+    <>
+    {console.log("Loading the loader")}
+    <Dot variants={loaderVariants} animate={animation}/>
+    <CenteredButton onClick={() => cycleAnimation()}>Change Animation</CenteredButton>
+    </>
   )
   
 }
