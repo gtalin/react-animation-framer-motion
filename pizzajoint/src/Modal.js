@@ -64,9 +64,8 @@ const Modal = ({showModal, setShowModal}) => {
         <ModalContent variants={foreground}>
           <p>Want to make another pizza?</p>
           <Link to="/">
-          <Button onClick={()=>setShowModal(!showModal)}>Make Pizza</Button>
-          </Link>
-          
+          <Button>Make Pizza</Button>
+          </Link>  
         </ModalContent>
       </ModalBackground>
     )}
