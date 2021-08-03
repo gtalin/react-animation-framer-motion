@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch, useLocation } from "react-router-dom";
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence} from 'framer-motion';
+import GlobalStyles from './GlobalStyles';
 import Header from './components/Header';
 import Home from './components/Home';
 import Base from './components/Base';
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+     <GlobalStyles/>
       <Header />
       <Modal showModal={showModal} setShowModal={setShowModal}/>
       <AnimatePresence exitBeforeEnter onExitComplete={()=>setShowModal(false)}>
