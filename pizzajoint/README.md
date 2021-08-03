@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project uses, `react`, `framer-motion` and `styled-components`.
 
-In this repo, I have redone the [Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i) react framer motion series using `styled-components`.
+In this repo, I have done the [Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iHDnQfTHEVVceOEBsOf07i) react framer motion series using `styled-components`.
 
 I am a huge fan of `styled-components` and while experimenting with `framer-motion`, I wanted to do the project using `styled-components`.
 
